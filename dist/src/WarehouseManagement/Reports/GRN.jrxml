@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f577a17-5a9b-4076-900b-dfb35b2b12a5">
+	<property name="ireport.zoom" value="1.6500000000000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="37"/>
+	<parameter name="xxx" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="receivedDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     goodrecievenotice.`receivedDate` AS goodrecievenotice_receivedDate,
+     goodrecievenotice.`productId` AS goodrecievenotice_productId,
+     goodrecievenotice.`productName` AS goodrecievenotice_productName,
+     goodrecievenotice.`quantity` AS goodrecievenotice_quantity,
+     goodrecievenotice.`requestId` AS goodrecievenotice_requestId
+FROM
+     `goodrecievenotice` goodrecievenotice
+WHERE
+     receivedDate = $P{receivedDate}]]>
+	</queryString>
+	<field name="goodrecievenotice_receivedDate" class="java.sql.Date"/>
+	<field name="goodrecievenotice_productId" class="java.lang.String"/>
+	<field name="goodrecievenotice_productName" class="java.lang.String"/>
+	<field name="goodrecievenotice_quantity" class="java.lang.Integer"/>
+	<field name="goodrecievenotice_requestId" class="java.lang.String"/>
+	<group name="goodrecievenotice_receivedDate">
+		<groupExpression><![CDATA[$F{goodrecievenotice_receivedDate}]]></groupExpression>
+		<groupHeader>
+			<band height="10"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="89">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="109" backcolor="#006699" uuid="5bcb8c21-04fe-40dc-a72b-22d4fb68cef4"/>
+				<staticText>
+					<reportElement x="182" y="20" width="412" height="43" forecolor="#FFFFFF" uuid="4fb2c889-606a-4426-ab53-300f0e4fabcf"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kelani Cables (PVT) LTD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="398" y="78" width="180" height="20" forecolor="#FFFFFF" uuid="745121de-3708-4ad1-9b11-b47143fee323"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Good Receive Notice]]></text>
+				</staticText>
+				<image>
+					<reportElement x="20" y="8" width="167" height="66" uuid="6c6a3c91-a84f-4428-9849-f1f3c8391ad8"/>
+					<imageExpression><![CDATA["kelaniLogo.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="eff74e66-2d47-4130-8dec-c3e99591cd4f"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f209c34c-7ebb-4fc5-8431-bdbc47a3db0c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Raw Material Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="31cb35fd-2150-4863-ad01-5883b18950ca"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5198d180-a7cb-46ad-9c53-4ca08ebc5997"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="185" y="0" width="185" height="20" uuid="27f9486c-3bea-4f94-9f5c-641674225136"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goodrecievenotice_productName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="370" y="0" width="185" height="20" uuid="77705ea7-2877-4b5e-a194-21e762ce6c2f"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goodrecievenotice_quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="185" height="20" uuid="daea0af1-ae8b-47ce-ac8a-09fdc14d7375"/>
+				<box>
+					<pen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineColor="#FFFFFF"/>
+				</box>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goodrecievenotice_productId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="143">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="130" width="555" height="13" backcolor="#E6E6E6" uuid="86e857eb-6b0f-4f44-9c48-4ac176598aed"/>
+				<textElement textAlignment="Right" markup="none"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yy">
+				<reportElement x="14" y="97" width="100" height="13" uuid="e2dda9e8-8b7d-4e16-924a-0506b8b659b1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="fef9d9d3-2750-408a-bc36-cd7010392ffd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goodrecievenotice_receivedDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="9aff1d12-63b8-4b08-855d-fa9034340afc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Received Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="110" width="100" height="20" uuid="cddc655e-05f6-4894-a066-19605d72c76b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Issued By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="95" width="203" height="20" uuid="a554c25c-241f-4c05-bff7-e0070ff3bea7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[-------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="110" width="100" height="20" uuid="e3b8b765-66bc-4dc7-9edc-352cd1ec57f2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

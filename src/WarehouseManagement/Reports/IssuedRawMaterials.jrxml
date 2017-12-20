@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1fb1e991-7b0c-463b-9f8c-03ea23c827ae">
+	<property name="ireport.zoom" value="1.4641000000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="to" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select rawMaterialId,itemName, sum(quantity) as quantity
+from viewissuedmaterials 
+where (requestDate>=$P{from} AND requestDate<=$P{to})
+
+group by rawMaterialId]]>
+	</queryString>
+	<field name="rawMaterialId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itemName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="rawMaterialId">
+		<groupExpression><![CDATA[$F{rawMaterialId}]]></groupExpression>
+		<groupHeader>
+			<band height="73">
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="ca1dd5be-e728-4254-b560-ce96993b2654"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rawMaterialId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="54c47401-fe84-4551-b614-af5c19e14a9b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Raw Material ID]]></text>
+				</staticText>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="4813e89a-7d79-4df9-9fe9-b7eba75ffef5"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="1" y="34" width="99" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="2fee3e17-61a8-493b-a02c-d5d0ae52e842"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Item Name]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="98" y="33" width="277" height="20" uuid="da2b61ae-2fdf-4837-8fc7-5cd07f543fbf"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{itemName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="98" y="53" width="277" height="20" uuid="81083ca3-9ca5-4ada-8297-65f027a4730f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="1" y="53" width="97" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="725a3881-d4f1-4324-ad12-ae8b3e734e4e"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Quantity (Units)]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="85">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="105" backcolor="#006699" uuid="2f569de8-dc12-4cdd-b4a7-4f549a2a08b0"/>
+				<staticText>
+					<reportElement x="181" y="20" width="402" height="43" forecolor="#FFFFFF" uuid="9ecc5b05-4899-434b-875a-4ea42b9c471a"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kelani Cables (PVT) LTD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="181" y="74" width="143" height="20" forecolor="#FFFFFF" uuid="85b8cfb3-2966-4e34-83f6-9e111a950ba5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Issued Raw Materials from]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement x="327" y="74" width="65" height="20" forecolor="#FFFFFF" uuid="06f30851-61be-43b9-8748-6aa756a11eb9"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{from}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="392" y="74" width="12" height="20" forecolor="#FFFFFF" uuid="7cd6ef53-68bc-402a-93df-7dab9aefcf6f"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[to]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement x="407" y="74" width="65" height="20" forecolor="#FFFFFF" uuid="907a835c-f7a8-4838-9fea-034e4d4c0076"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{to}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="20" y="15" width="85" height="48" uuid="68aea416-f702-4a67-bd55-bc7138d20b59"/>
+					<imageExpression><![CDATA["F:\\Kelani Cables Project\\KelaniCables\\src\\WarehouseManagement\\Reports\\kelaniLogo.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="45">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="9daa5630-1a02-4f38-84a3-88c872a70351"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="552ac1fe-ac77-40df-b630-397c947ed170"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="22">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="0b63918d-f56f-4907-a6ae-5940797cc5b9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="0336f3bc-10ce-4402-9df8-d28ec5e76a20"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="6f08bebc-187d-4b67-91da-6548d52d898e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

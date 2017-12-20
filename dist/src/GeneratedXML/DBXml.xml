@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Databases xmlns="Kelani Cables">
+<Database id="1">
+<Name>jdbc:mysql://localhost/kelanidb</Name>
+<Username>kelaniAdmin</Username>
+<Password>a2VsYW5pMTIz</Password>
+</Database>
+</Databases>

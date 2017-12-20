@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="25fd0cab-cef0-41f2-89d5-7dbbcabae032">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="to" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tableName" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select productId,name,quantity from viewlargeissuedproducts where invoiceDate between $P{from} and $P{to}]]>
+	</queryString>
+	<field name="productId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="productId">
+		<groupExpression><![CDATA[$F{productId}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="a537382a-da03-4248-9f5f-6cda870e6b58"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Product ID]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E3E3E3" uuid="a63b119a-dd66-41a6-b14e-a1af144d46f0"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{productId}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="c834dae7-0223-4b60-a241-baeadab5308d"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="18baa2ab-e09b-4f60-93be-1cc38648e5d0"/>
+				<staticText>
+					<reportElement x="180" y="15" width="401" height="43" forecolor="#FFFFFF" uuid="74af3ea8-19f2-4112-bbb3-860f6a956062"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kelani Cables (PVT) LTD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="67" width="157" height="20" forecolor="#FFFFFF" uuid="124a404f-75d0-4ecc-b1b1-23260a5a01ba"/>
+					<textElement>
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Issued finished products from ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="yyyy/MM/dd">
+					<reportElement x="339" y="67" width="62" height="20" forecolor="#FFFFFF" uuid="19d7f238-5cee-43cc-8475-dc2c42f519c6"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{from}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="402" y="67" width="19" height="20" forecolor="#FFFFFF" uuid="522186ba-de99-435e-988f-53765cba3428"/>
+					<textElement>
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[to]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="yyyy/MM/dd">
+					<reportElement x="421" y="67" width="62" height="20" forecolor="#FFFFFF" uuid="d47e0a84-2e07-48c0-a4f8-92aa6ad7b529"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{to}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="20" y="16" width="75" height="43" uuid="a4d27550-97d0-433e-8650-030080c77eee"/>
+					<imageExpression><![CDATA["kelaniLogo.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="144194da-7953-4566-9539-4c6350b89d59"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="73">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="0" width="185" height="20" uuid="25b55afd-3a14-478f-88ec-b52fd1e21a1c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="20" width="185" height="20" uuid="f735297e-8aa5-4eb6-94c4-d76b851b96f5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="100" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="9c36c682-af96-4e83-a562-2887ddd0c748"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="100" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="8dc127df-1124-4d6b-b97b-77ab0272c910"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="3b800849-b7f2-485b-ac4a-dd5ef6ba796a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="f60706cf-d1d1-4330-a19a-8c4019712481"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="12706d2d-36d8-4d3c-8e10-7cc358802ceb"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

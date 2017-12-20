@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1de15b0c-e0bc-4bfc-878c-8a568abe7e44">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="comId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     complain.`complainId` AS complain_complainId,
+     complain.`itemId` AS complain_itemId,
+     complain.`complainDate` AS complain_complainDate,
+     complain.`description` AS complain_description,
+     complain.`fault` AS complain_fault,
+     complain.`employeeId` AS complain_employeeId,
+     complain.`technician` AS complain_technician
+FROM
+     `complain` complain
+
+where 
+      complain.`complainId` = $P{comId}]]>
+	</queryString>
+	<field name="complain_complainId" class="java.lang.String"/>
+	<field name="complain_itemId" class="java.lang.String"/>
+	<field name="complain_complainDate" class="java.sql.Date"/>
+	<field name="complain_description" class="java.lang.String"/>
+	<field name="complain_fault" class="java.lang.String"/>
+	<field name="complain_employeeId" class="java.lang.String"/>
+	<field name="complain_technician" class="java.lang.String"/>
+	<group name="complain_complainId">
+		<groupExpression><![CDATA[$F{complain_complainId}]]></groupExpression>
+		<groupHeader>
+			<band height="496">
+				<staticText>
+					<reportElement mode="Opaque" x="36" y="1" width="100" height="32" forecolor="#0000CC" backcolor="#FFFFFF" uuid="6ef72023-3d14-4575-b92e-9e857b9dadca"/>
+					<textElement>
+						<font fontName="SansSerif" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Complain ID]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="169" y="0" width="386" height="32" forecolor="#000000" backcolor="#FFFFFF" uuid="690d1d1d-8ef2-4bec-b5b5-b195717b06cb"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_complainId}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="5ed03556-7f4f-41a6-b0f2-95fb4f9458e4"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="26" y="94" width="51" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="be83e7fc-d1d8-494e-b767-b1d5617a8792"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Item Id]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="169" y="94" width="263" height="20" uuid="7cbccbe2-24f5-4156-96cb-67e351aacb95"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_itemId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="18" y="144" width="50" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="98da221e-ac00-495e-af3e-43d17583fb80"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="169" y="144" width="263" height="20" uuid="a41ebab1-6e29-44dc-9971-e44a1d33348c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_complainDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="16" y="361" width="92" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="b92f67d2-d279-492d-847d-8b70ee92dbbb"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Discription]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="169" y="361" width="364" height="114" uuid="5be60f38-ff89-4b1c-a2f8-c468524d04f8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_description}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="16" y="191" width="92" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="ab971194-aa27-44ee-b6de-e7f218d4889f"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fault Type]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="169" y="191" width="263" height="20" uuid="5666c31b-2763-409c-bfc3-f91d40a09f2e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_fault}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="24" y="247" width="92" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="d24af99d-57cb-4064-a79b-4ae632058e6e"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Employee ID]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="169" y="247" width="263" height="20" uuid="2fa3b861-91a9-4a71-9fa2-b92a01c90aec"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_employeeId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="26" y="299" width="92" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="8eaaaf17-4683-4d78-bee8-9351269c49dd"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Technician ID]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="169" y="299" width="263" height="20" uuid="5619fa54-843b-4eb8-b6ba-d4423196fc42"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{complain_technician}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="356aa81e-4296-4b0b-89a6-16e8a523110a"/>
+				<staticText>
+					<reportElement x="319" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="ce8c7ea2-d618-42d1-a527-d43c4444fdfa"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COMPLAIN]]></text>
+				</staticText>
+				<image>
+					<reportElement x="24" y="5" width="110" height="82" uuid="ad91b7cd-77dd-4f0a-b220-e59ceac82f2c"/>
+					<imageExpression><![CDATA["kelanilogo.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="e6b8ed86-9b34-424c-8105-100b5ae40f06"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37"/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="1a7a3085-d3bc-4b82-8adc-7e49a3a40d0e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="fd07dd86-f561-43b1-b514-532ec313fe61"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="feaa689f-9331-484a-b8f6-9b700a935dc8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

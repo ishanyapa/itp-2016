@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d4621c2-c2e8-4a5d-b12a-02e5cba8a22d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="month" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM salarypayment WHERE employeeId=$P{id} AND month=$P{month}]]>
+	</queryString>
+	<field name="salaryId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="employeeId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="issueDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="month" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bonus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="netSalary" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="salaryId">
+		<groupExpression><![CDATA[$F{salaryId}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<textField>
+					<reportElement mode="Opaque" x="21" y="1" width="455" height="32" forecolor="#006699" backcolor="#FFFFFF" uuid="0caaee31-6c94-49fc-86f5-97498e5f592c"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{salaryId}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="c4f6f132-479b-4f32-bcfd-72d01b61afcf"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="513a00e1-6fd5-4649-8d33-f1e24779834f"/>
+				<staticText>
+					<reportElement x="131" y="10" width="444" height="43" forecolor="#FFFFFF" uuid="6f98eeb1-cece-4014-bba1-c313dde3ad33"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kelani Cables (PVT) LTD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="401" y="53" width="95" height="20" forecolor="#FFFFFF" uuid="c47569c2-4d0a-4b13-886c-6af00ae61bbf"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Salary Slip - ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="496" y="53" width="79" height="20" forecolor="#FFFFFF" uuid="8f9d1156-473b-4147-b9be-48ce271587ca"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeId}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="41" y="10" width="71" height="63" uuid="988d328c-3bb2-4fb3-bbd8-6f068da0c934"/>
+					<imageExpression><![CDATA["672_1400232738.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="d39d0ac4-1580-461e-b97d-5ef85664fbe2"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="235">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="52350bca-c210-43e7-a5af-6a1e50889690"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="132" y="38" width="111" height="20" uuid="c67a4a0a-c6d0-4b38-a8e0-c6a7e4f961db"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employeeId}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="132" y="68" width="111" height="16" uuid="3dc65ae8-4c0d-4191-bba8-a0ca2bdb8c9e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{issueDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="132" y="96" width="111" height="16" uuid="cba248c7-3f34-48c1-83cc-192d2cec2aa7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="132" y="125" width="111" height="16" uuid="21fcbf57-1e23-42a1-8c99-049d7eba0ee7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="132" y="152" width="111" height="16" uuid="818b24e4-bc75-4096-970c-631571f9cf83"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netSalary}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="38" width="111" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="c03a1caa-de8b-4a9c-b025-936dd82b028d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="68" width="111" height="16" forecolor="#006699" backcolor="#FFFFFF" uuid="aa4f8006-5af7-46c7-996c-a9f4aeac20f1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issued Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="96" width="111" height="16" forecolor="#006699" backcolor="#FFFFFF" uuid="a6b5bdf5-d987-462d-ae1f-e5eece4634d8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Month :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="125" width="111" height="16" forecolor="#006699" backcolor="#FFFFFF" uuid="c8da66f2-7301-4cbf-85d1-731be2b11f84"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OT Allowance :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="152" width="111" height="16" forecolor="#006699" backcolor="#FFFFFF" uuid="7c43d5d4-75bb-472c-ad55-7a31a00e00b7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Salary :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="b06d940a-db32-4dde-8809-bf11844dbc75"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="9f4dfe3d-6d56-4318-b9ae-31bff1523e8b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="7d190b38-ffb9-47e7-888a-95f5b9884ee4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

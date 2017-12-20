@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="800" pageHeight="500" orientation="Landscape" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2483b827-a9a5-4563-afda-c8f39e3bb9ba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="time" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="v_no" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="d_name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="from" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="to" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="type" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="passno" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[$P{date}$P{date}$P{d_name}$P{from}$P{time}$P{to}$P{type}$P{v_no}$P{passno}]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="291" y="12" width="230" height="36" uuid="794270a1-6648-413e-b04a-abfe5f59fc3a"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[KELANI CABLES Pvt(Ltd)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="59" width="354" height="20" uuid="fd3b4dc8-90a8-4827-bb1a-cebfa94be83e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ P.O.Box 14, Wewelduwa Road, Kelaniya, Sri Lanka.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="32" y="4" width="152" height="75" uuid="969ea5db-8039-4fe6-8f7e-348d4d10812a"/>
+				<imageExpression><![CDATA["src/Distribution/images/672_1400232738.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="215" height="35" uuid="f5398288-4db1-4a32-9402-118b28a3871c"/>
+				<textElement>
+					<font fontName="Monospaced" size="24" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Gate Pass]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="573" y="12" width="70" height="24" uuid="665e0f87-7790-427e-9d8d-9c728b9fbe3a"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Pass No : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="650" y="14" width="100" height="20" forecolor="#FF0000" uuid="ffe1a836-20d0-4892-a34e-437e55e557b9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{passno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="161" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="159" height="20" uuid="4d5ea1a5-0587-468d-a2d7-8224d2ec7555"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="159" height="20" uuid="749aebac-8389-4506-bb8d-aea9fcb15f26"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="75" width="159" height="20" uuid="90c45151-a110-4a6b-823a-0a949546ee88"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Vehicle Numeber ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="115" width="159" height="20" uuid="6905ad84-774c-4fa8-a0bf-c756de009c7f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Driver's Name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="100" height="20" uuid="671b6ced-ecfa-45b6-b616-b4696218598d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[From ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="40" width="100" height="20" uuid="e27a49cd-f201-4c0c-9c4e-453f8bff3a0f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[To ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="82" width="100" height="20" uuid="f8ffa608-eb15-4603-a61e-d325bfad7e68"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Visit Type ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="184" y="3" width="100" height="20" uuid="de460f13-b05e-4a37-9e79-42ac633a86f3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="75" width="100" height="20" uuid="adb1f0ac-ff4c-4bb1-9c17-d06e3ff5c2d9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{v_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="116" width="180" height="20" uuid="00ecc059-30ec-42d1-a831-ca49df7a6848"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{d_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="581" y="0" width="100" height="20" uuid="2bf1b900-33a4-48b7-bb48-34856f512600"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{from}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="581" y="38" width="100" height="20" uuid="3eed5683-46e0-489c-a3bb-972f34942b8c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{to}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="581" y="83" width="100" height="20" uuid="adcbf189-a8f2-4153-aa15-3eb9785d4e1e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement x="181" y="40" width="132" height="20" uuid="0e80c802-a84a-470e-a759-046f577dcf6f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="78" y="32" width="100" height="20" uuid="17e056cd-3455-4200-983c-984ca183f9a1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="12" width="206" height="20" uuid="f5b5e213-6048-49c1-8415-158fa6fd6bea"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[...................................................]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="432" y="22" width="370" height="20" uuid="84118a80-5dad-4a6f-8979-b294b632b23d"/>
+				<text><![CDATA[Note : This gatepass is no longer valid after 12 hours of issuing ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

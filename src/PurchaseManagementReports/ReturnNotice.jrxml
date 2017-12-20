@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="09c81912-36df-4665-886e-44724d13691d">
+	<property name="ireport.zoom" value="0.8264462809917374"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="100"/>
+	<parameter name="returnid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     purchase.`purchaseDate` AS purchase_purchaseDate,
+     purchase.`purchaseVia` AS purchase_purchaseVia,
+     purchase.`quantity` AS purchase_quantity,
+     purchase.`purchaseType` AS purchase_purchaseType,
+     returnitem.`returnId` AS returnitem_returnId,
+     returnitem.`returnDate` AS returnitem_returnDate,
+     returnitem.`reason` AS returnitem_reason,
+     returnitem.`description` AS returnitem_description,
+     returnitem.`purchaseId` AS returnitem_purchaseId
+FROM
+     `purchase` purchase INNER JOIN `returnitem` returnitem ON purchase.`purchaseId` = returnitem.`purchaseId` and returnitem.`returnId` = $P{returnid}]]>
+	</queryString>
+	<field name="purchase_purchaseDate" class="java.sql.Date"/>
+	<field name="purchase_purchaseVia" class="java.lang.String"/>
+	<field name="purchase_quantity" class="java.lang.Integer"/>
+	<field name="purchase_purchaseType" class="java.lang.String"/>
+	<field name="returnitem_returnId" class="java.lang.String"/>
+	<field name="returnitem_returnDate" class="java.sql.Date"/>
+	<field name="returnitem_reason" class="java.lang.String"/>
+	<field name="returnitem_description" class="java.lang.String"/>
+	<field name="returnitem_purchaseId" class="java.lang.String"/>
+	<group name="returnitem_returnId">
+		<groupExpression><![CDATA[$F{returnitem_returnId}]]></groupExpression>
+		<groupHeader>
+			<band height="242">
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="48" width="98" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="be82703f-d44e-445a-ad8c-6212c2a46bcd"/>
+					<textElement textAlignment="Left">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reason]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="20" width="98" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="8442a8af-b7e2-4bf1-a95d-10cdcb62796d"/>
+					<textElement textAlignment="Left">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Return date]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="128" y="78" width="198" height="20" uuid="07baed1f-b891-4b6a-9cf5-5f490bf7b9d6"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{purchase_quantity}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="128" y="20" width="198" height="20" uuid="957253c1-c771-4142-94ba-233a8d2b70e5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{returnitem_returnDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="440" y="8" width="112" height="20" uuid="eb345d57-2c4a-4212-9295-034f74563e3a"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Return Details]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="128" y="48" width="198" height="20" uuid="84938189-0d54-4254-a6c9-617f3c967ae0"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{returnitem_reason}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="78" width="113" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="1ede2871-aca2-4b37-abdd-33414a67170c"/>
+					<textElement textAlignment="Left">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Quantity]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="110" width="118" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="e1d7e78c-b3f9-4f39-a194-3f075fa47fcd"/>
+					<textElement textAlignment="Left">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Description]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="128" y="110" width="403" height="107" uuid="d0faf3b6-565a-437a-a6ca-9cc3b74d681f"/>
+					<textElement textAlignment="Justified">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{returnitem_description}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="154">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="144" backcolor="#006699" uuid="3abddacf-ddca-41a8-b3e8-b7f29092b92a"/>
+				<staticText>
+					<reportElement x="137" y="32" width="414" height="43" forecolor="#FFFFFF" uuid="fbbe4a16-c794-46d5-ab81-af614ec0a619"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Kelani Cables (PVT) LTD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="348" y="86" width="187" height="30" forecolor="#FFFFFF" uuid="647e6416-f74a-4b8d-8704-61f426cb21d5"/>
+					<textElement textAlignment="Right">
+						<font size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Return Notice]]></text>
+				</staticText>
+				<image>
+					<reportElement x="20" y="32" width="100" height="72" uuid="4df04b65-0785-4326-be63-33022bc7e30d"/>
+					<imageExpression><![CDATA["kelanilogo.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42">
+			<textField>
+				<reportElement mode="Opaque" x="471" y="10" width="81" height="23" forecolor="#006699" backcolor="#FFFFFF" uuid="fee0f19f-739f-4a7a-992b-28cefef4aa19"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{returnitem_returnId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="371" y="10" width="100" height="23" forecolor="#666666" backcolor="#FFFFFF" uuid="04267c1a-2396-4faf-8cf1-dd53f2da2936"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Return ID]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="249">
+			<line>
+				<reportElement x="-20" y="-1" width="595" height="1" forecolor="#666666" uuid="5f8750ae-1d2c-4625-84b0-7c9e7fe4388b"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="43" width="115" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="8d1c25d1-8a63-4d94-99b6-0f2779a04aec"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="74" width="115" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="3c6ca3c6-de03-4782-af8e-f16c98ecccb6"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase via]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="106" width="113" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="c2134f6c-dc1a-4ec4-871c-cb45fb5f1015"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase type]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="128" y="43" width="198" height="20" uuid="b6669dba-71cb-43a7-a0b2-bd5ac312b91d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchase_purchaseDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="128" y="74" width="200" height="20" uuid="e274aa60-3c41-47e1-8193-4be11d713bb6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchase_purchaseVia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="128" y="106" width="200" height="20" uuid="d30c27eb-78c1-42df-9af0-468425c1becd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchase_purchaseType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="10" width="112" height="20" uuid="5cea9a28-b800-4a76-a88d-df28fb7964c7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="138" width="113" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="27cdac5b-ac9d-4fe0-99f8-4c81af672051"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase ID]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="128" y="138" width="198" height="20" uuid="9b77b0ec-ccf6-4f55-b701-7286b536f945"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{returnitem_purchaseId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="5"/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="446" y="4" width="106" height="14" uuid="8aa14fd2-75a1-49ec-8382-211ee28e11ae"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="4" width="320" height="14" uuid="0ceb0036-bd31-425a-8d13-bdcea2a89474"/>
+				<text><![CDATA[Issued by Kelani Cables Pvt (LTD) - Purchase management division on]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

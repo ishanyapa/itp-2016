@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="61d4508d-5c51-46e2-8a98-adc474f36bba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="sugId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT s.suggestionId,DATE(s.suggestionDate),s.description,s.itemId, s.employeeId,e.name,e.telephoneMob,o.jobName,o.division
+FROM suggestion s,employee e,occupation o
+WHERE s.employeeId = e.employeeId AND e.jobId = o.jobId AND s.suggestionId = $P{sugId}]]>
+	</queryString>
+	<field name="suggestionId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE(s.suggestionDate)" class="java.sql.Date"/>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itemId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="employeeId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telephoneMob" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jobName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="division" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="suggestionId">
+		<groupExpression><![CDATA[$F{suggestionId}]]></groupExpression>
+		<groupHeader>
+			<band height="499">
+				<textField>
+					<reportElement mode="Opaque" x="142" y="0" width="413" height="32" forecolor="#006699" backcolor="#FFFFFF" uuid="826eb321-6dbd-4f12-b76a-35ea83665413"/>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{suggestionId}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="a542c425-c033-428b-a546-9e1537d2d1df"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="18" y="58" width="65" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="b277a12d-4839-43e3-903d-cca63f5b8c47"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Item ID]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="58" width="230" height="20" uuid="cba0a4be-2a53-451f-ada7-9d8927026e3c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{itemId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="24" y="99" width="69" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="3b05d641-4c9a-4a20-b7f1-1a0a61c85be4"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Employee ID]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="99" width="230" height="20" uuid="b0c999b6-a3d7-4be5-915c-0e02286cc318"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="16" y="137" width="126" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="84bf8ecc-d32c-46bc-ba0d-4641e9dc5025"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Employee Name]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="137" width="230" height="20" uuid="9f3c518f-6ae4-457c-9a27-4e405c5be570"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="7" y="184" width="106" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="a26ca5c7-2e6c-4a98-863e-4d3cf69971f3"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Telephone number]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="184" width="230" height="20" uuid="0b0a6056-a4a8-41bc-8210-0c7ecc00b4e5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{telephoneMob}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="20" y="228" width="69" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="12d78581-53c9-48e5-9966-ba1ff15487f8"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Job Name]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="228" width="230" height="20" uuid="793595d4-c14c-47fc-a115-ce702cd49b11"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jobName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="16" y="266" width="69" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="d76cf865-027d-4acf-8b64-29c2a2f0d94a"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Division]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="266" width="230" height="20" uuid="bed6243a-1ed6-458c-a3ee-d83f4572c34a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{division}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="16" y="302" width="46" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="a2b4aeb9-9050-4d15-ad18-a425ee4793ca"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="302" width="230" height="20" uuid="2bb6d470-1e76-4bb7-b7dd-fb1001c201d8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DATE(s.suggestionDate)}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="7" y="342" width="115" height="20" forecolor="#006699" backcolor="#FFFFFF" uuid="9bb64cad-b7fd-4fbf-93f8-a5945d5ccee4"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Description]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="207" y="342" width="230" height="20" uuid="16b6317b-1c21-49db-967d-3dba5111b071"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="7" y="0" width="122" height="32" forecolor="#666666" backcolor="#FFFFFF" uuid="bf6d23a2-1482-4875-bffb-6c7a64529cb8"/>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Suggestion ID]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="7b089914-3b27-4bdd-bb6b-8cd1238898d8"/>
+				<staticText>
+					<reportElement x="341" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="fabd8994-c0d4-42d9-ad97-2c1325ae5422"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Suggestion ]]></text>
+				</staticText>
+				<image>
+					<reportElement x="28" y="5" width="136" height="83" uuid="681f3bde-b07f-40e6-9d67-6efa7ff9e0c1"/>
+					<imageExpression><![CDATA["kelanilogo.jpeg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="69bd287a-ef55-4244-b64a-e8ac74434329"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36"/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="81381914-4de6-4830-9586-57fffc9d9ff6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7a1aab38-423d-4018-9bac-5c0e56be9046"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="be48923d-d8ba-43a8-8edc-e7e49c1ece2f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

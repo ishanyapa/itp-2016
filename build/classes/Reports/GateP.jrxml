@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60017829-f7ef-48f3-8f0f-10adbb0aafac">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="to" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select passNo, deliverTo  , deliverFrom , deliveryId ,passDate 
+from gatepass
+where passDate BETWEEN $P{from} AND $P{to}]]>
+	</queryString>
+	<field name="passNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deliverTo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deliverFrom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deliveryId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="passNo">
+		<groupExpression><![CDATA[$F{passNo}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="aab4590e-0182-4433-9851-ade382b38d09"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="457fda91-c3d0-4d9c-b72e-6008f09f396c"/>
+				<staticText>
+					<reportElement x="183" y="0" width="251" height="42" forecolor="#FFFFFF" uuid="22852ed4-c78c-4fb0-a2da-f38fd14110a9"/>
+					<textElement>
+						<font size="22"/>
+					</textElement>
+					<text><![CDATA[Kelani Cables (Pvt) Ltd]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="58" width="145" height="20" forecolor="#FFFFFF" uuid="d2c35424-d0dd-448b-9311-c3ead65295c5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[Issued Gate Passes ]]></text>
+				</staticText>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="403" y="58" width="172" height="20" forecolor="#FFFFFF" uuid="3e3edb26-2e10-472b-b1ea-bb215b2107b2"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="74632c99-13eb-48a2-931d-8a0f5e1e9def"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="90" y="0" width="97" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="93affbb3-d448-4877-9fe0-7d741eac8872"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="187" y="0" width="89" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="87558777-e54e-4baa-b7e0-dcbdc57c9e8b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[From]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2291f2ee-757c-4ed3-9d34-1f5ee9e55560"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Delivery ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="42dd4816-190a-45e6-81fe-3a04eca174c4"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issued Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="90" height="19" forecolor="#006699" backcolor="#E6E6E6" uuid="7336b24b-0abf-47e3-86c6-f67920465b12"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pass Number]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="d2c5e42e-d968-4ce7-843b-85d10793c3ad"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="0" width="87" height="20" uuid="20eedb1e-f074-481e-b82f-2e08e58c78db"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deliverTo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="204" y="0" width="89" height="20" uuid="c070dfbb-e770-4a6c-a4c4-2423c04e6fb0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deliverFrom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="314" y="0" width="100" height="20" uuid="841422de-44cb-495c-9705-33f5815f626f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deliveryId}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="457" y="0" width="95" height="20" uuid="b4b2ff07-f3f2-44ac-9517-93724bcf8b30"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="1" width="100" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="771a2427-95c0-4fea-afe2-1b4ec11278f0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="eb98f9a5-53b3-4903-b3fe-5a6aaddfabd2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="d653af63-bac3-4a1f-9838-a3e537df6e44"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
